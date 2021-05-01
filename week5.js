@@ -46,8 +46,11 @@ window.addEventListener('DOMContentLoaded', async function() {
         let json = await response.json()
   
         // - Write the json-formatted data to the JavaScript console
+
+        // console.log(json)
   
         // - Store the interpreted location, current weather conditions, the forecast as three separate variables
+       
         let APILocation = json.location
         let APICurrent = json.current
         let APIForecast = json.forecast
@@ -58,10 +61,10 @@ window.addEventListener('DOMContentLoaded', async function() {
         let SiteLocation = document.querySelector(`.current`)
   
         SiteLocation.innerHTML = `
-        <div class = "mt-8">
-        <div class = "text-center space-y-2">
-          <div class = "text-3x1 font-extrabold">Current Weather for ${APILocation.name}, ${APILocation.region}, ${APILocation.country}</div>
-          <div class ="text-2x1 font-bold text-blue-700">
+        <div class="mt-8">
+        <div class="text-center space-y-2 border-4 border-blue-300">
+          <div class="text-xl font-extrabold">Current Weather for ${APILocation.name}, ${APILocation.region}, ${APILocation.country}</div>
+          <div class="text-lg font-bold text-blue-700">
             <img src="https:${APICurrent.condition.icon}" class="inline-block">
             It is currently ${APICurrent.temp_f}° and ${APICurrent.condition.text}.
           </div>
@@ -74,7 +77,7 @@ window.addEventListener('DOMContentLoaded', async function() {
         if(days > 0){
   
         // Clear the forecast display
-  
+ 
             let forecastTitle = document.querySelector(`.forecast`)
   
             forecastTitle.innerHTML = `
@@ -107,12 +110,13 @@ window.addEventListener('DOMContentLoaded', async function() {
                     
                       SiteForecast.insertAdjacentHTML(`beforeend`,`
                           <div></div>
-                          <div></div>
-                          <div class="text-center space-y-8 border-4">
+                          <div>
+                          <div class="text-center space-y-8 border-4 border-purple-400 w-1/2 mx-auto">
                               <img src="https:${forecastIcon} "class="mx-auto">
-                              <div class="text-2xl font-bold text-purple-700">${forecastDate}</div>
-                              <div class="font-bold">High ${forecastMax} – Low ${forecastMin}</div>
-                              <p class="text-blue-500">${forecastCondition}</h1>
+                              <div class="text-2xl font-bold">${forecastDate}</div>
+                              <div class="font-bold text-3x1 text-purple-700">High ${forecastMax} – Low ${forecastMin}</div>
+                              <p class="text-blue-500 font-semibold">${forecastCondition}</h1>
+                          </div>
                           </div>
                           <div></div>
                           <div></div>
