@@ -58,12 +58,12 @@ window.addEventListener('DOMContentLoaded', async function() {
         let SiteLocation = document.querySelector(`.current`)
   
         SiteLocation.innerHTML = `
-        <div class="mt-8">
-        <div class="text-center space-y-2">
-          <div class="location font-bold text-3xl">Current Weather for ${APILocation.name}, ${APILocation.region}, ${APILocation.country}</div>
-          <div class="text-2x1 font-bold text-blue-700">
+        <div class = "mt-8">
+        <div class = "text-center space-y-2">
+          <div class = "text-3x1 font-extrabold">Current Weather for ${APILocation.name}, ${APILocation.region}, ${APILocation.country}</div>
+          <div class ="text-2x1 font-bold text-blue-700">
             <img src="https:${APICurrent.condition.icon}" class="inline-block">
-            Currently it is ${APICurrent.temp_f}° and ${APICurrent.condition.text}.
+            It is currently ${APICurrent.temp_f}° and ${APICurrent.condition.text}.
           </div>
         </div>
         </div>
@@ -110,8 +110,8 @@ window.addEventListener('DOMContentLoaded', async function() {
                           <div></div>
                           <div class="text-center space-y-8 border-4">
                               <img src="https:${forecastIcon} "class="mx-auto">
-                              <h1 class="text-2xl text-bold text-purple-700">${forecastDate}</h1>
-                              <h2 class="text-bold">High ${forecastMax} – Low ${forecastMin}</h2>
+                              <div class="text-2xl font-bold text-purple-700">${forecastDate}</div>
+                              <div class="font-bold">High ${forecastMax} – Low ${forecastMin}</div>
                               <p class="text-blue-500">${forecastCondition}</h1>
                           </div>
                           <div></div>
